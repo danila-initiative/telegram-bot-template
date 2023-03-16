@@ -3,6 +3,7 @@ FROM python:3.9.6-slim
 # creating workdir
 RUN mkdir app
 WORKDIR /app
+COPY . /app
 
 # install system requirements
 RUN apt update && apt upgrade -y
