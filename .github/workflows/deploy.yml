@@ -29,7 +29,7 @@ jobs:
         run: export | grep "secret_" | sed "s/declare -x secret_//" > .env
         env:
           secret_USER_BOT_TOKEN: ${{ secrets.USER_BOT_TOKEN }}
-          secret_PYTHONPATH: "/app"
+          secret_PYTHONPATH: /app
       - run: echo "GITHUB_SHA=$GITHUB_SHA" >> .env
       - run: echo "${{ secrets.PRODUCTION_SSH_KEY }}" > ${{ env.SSH_KEY_PATH }} && chmod 600 ${{ env.SSH_KEY_PATH }}
       - run: ssh -i ${{ env.SSH_KEY_PATH }} root@82.148.18.186 "mkdir app && cd /app && docker login ghcr.io -u $GITHUB_ACTOR -p ${{ secrets.TOKEN }} && docker pull ghcr.io/$GITHUB_ACTOR/template-bot:$GITHUB_SHA && docker-compose -f docker-compose.yml --env-file=.env up -d && docker system prune --all --force"
