@@ -8,6 +8,5 @@ services:
     container_name: telegram_bot_template
     volumes:
       - ./data:/app/data
-      - ./code:/app/code
     env_file:
       - .env
