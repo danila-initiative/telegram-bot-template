@@ -5,4 +5,4 @@ class Settings(BaseSettings):
     user_bot_token: SecretStr
 
 
-context = Settings()
+context = Settings()  # type: ignore
