@@ -23,6 +23,7 @@ jobs:
         id: setup-python
         with:
           python-version: '3.8'
+          fail_on_error: true
 
       - name: Install requirements
         run: |
