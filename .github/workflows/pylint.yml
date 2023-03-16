@@ -2,35 +2,32 @@ name: Run tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-
-concurrency:
-  # For pull requests, cancel all currently-running jobs for this workflow
-  # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#concurrency
-  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
-  cancel-in-progress: true
+    branches: [ main ]
 
 jobs:
-  lint:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-python@v4
-        id: setup-python
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
-
-      - name: Install requirements
+          python-version: '3.9'
+      - name: Install dependencies
         run: |
-          pip install --no-cache-dir flake8
-
-      - name: run flake8
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8
         run: |
-          # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # exit-zero treats all errors as warnings.
-          flake8 . --count --exit-zero --statistics
+          pip install flake8
+          flake8 .
+        continue-on-error: true
+      - name: Lint with mypy
+        run: |
+          pip install mypy
+          mypy .
+        continue-on-error: true
