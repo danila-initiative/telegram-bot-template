@@ -2,9 +2,10 @@ version: "3"
 
 services:
   telegram-bot:
-    build: .
+    image: ghcr.io/danila-initiative/template-bot:${GITHUB_SHA:-latest}
     restart: always
     command: /usr/local/bin/python3 /app/code/user_bot.py
+    container_name: telegram_bot_template
     volumes:
       - ./data:/app/data
       - ./code:/app/code
