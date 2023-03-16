@@ -19,7 +19,8 @@ async def command_start_handler(message: Message) -> None:
     """
     This handler receive messages with `/start` command
     """
-    await message.answer(f"Hello, <b>{message.from_user.full_name}!</b>")
+    if message.from_user:
+        await message.answer(f"Hello, <b>{message.from_user.full_name}!</b>")
 
 
 @router.message()
