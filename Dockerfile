@@ -5,6 +5,9 @@ RUN mkdir app
 WORKDIR /app
 COPY . /app
 
+# copy code folder to workdir
+COPY ./code /app/code
+
 # install system requirements
 RUN apt update && apt upgrade -y
 RUN apt install -y systemctl nano
