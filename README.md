@@ -2,7 +2,7 @@
 
 This is a template for creating Telegram bots on Python 3.7+ using
 [aiogram 3 beta](https://github.com/aiogram/aiogram).  
-With Github Actions and Docker.
+With Github Actions and Docker. (test)
 
 
 ## How to use
