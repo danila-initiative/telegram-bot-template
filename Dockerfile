@@ -13,3 +13,5 @@ RUN apt install -y supervisor
 # install python requirements
 RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
+
+RUN touch /var/log/cron.log
