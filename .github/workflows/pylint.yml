@@ -23,7 +23,6 @@ jobs:
         id: setup-python
         with:
           python-version: '3.8'
-          fail_on_error: true
 
       - name: Install requirements
         run: |
@@ -35,3 +34,5 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # exit-zero treats all errors as warnings.
           flake8 . --count --exit-zero --statistics
+        with:
+          fail_on_error: true
