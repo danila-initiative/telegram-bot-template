@@ -4,7 +4,7 @@ services:
   telegram-bot:
     image: ghcr.io/danila-initiative/template-bot:${GITHUB_SHA:-latest}
     restart: always
-    command: tail -f /var/log/cron.log
+    command: python3 /app/code/user_bot.py
     container_name: telegram_bot_template
     volumes:
       - ./data:/app/data
