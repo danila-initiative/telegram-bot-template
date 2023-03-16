@@ -25,9 +25,9 @@ jobs:
         run: |
           pip install flake8
           flake8 .
-        continue-on-error: true
+        continue-on-error: false
       - name: Lint with mypy
         run: |
           pip install mypy
           mypy .
-        continue-on-error: true
+        continue-on-error: false
