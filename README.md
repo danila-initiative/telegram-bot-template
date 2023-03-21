@@ -81,9 +81,6 @@ supervisorctl restart user-bot
 │   │   └── __init__.py
 │   ├── internal
 │   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-39.pyc
-│   │   │   └── config.cpython-39.pyc
 │   │   ├── config.py
 │   │   └── db.py
 │   ├── keyboards
