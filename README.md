@@ -98,6 +98,8 @@ supervisorctl restart user-bot
 │   ├── python_user.stderr.log
 │   ├── python_user.stdout.log
 │   └── sqlite.db
+├── .dockerignore
+├── .gitignore
 ├── Dockerfile
 ├── docker-compose.dev.yml
 ├── docker-compose.production.yml
