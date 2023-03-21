@@ -71,9 +71,10 @@ supervisorctl restart user-bot
 
 ## Full project tree
 ```bash
-├── Dockerfile
-├── Makefile
-├── README.md
+├── .github
+│   └── workflows
+│       ├── check-pep8.yml
+│       └── deploy.yml
 ├── code
 │   ├── __init__.py
 │   ├── docs
@@ -97,9 +98,12 @@ supervisorctl restart user-bot
 │   ├── python_user.stderr.log
 │   ├── python_user.stdout.log
 │   └── sqlite.db
+├── Dockerfile
 ├── docker-compose.dev.yml
 ├── docker-compose.production.yml
+├── Makefile
 ├── pyproject.toml
+├── README.md
 ├── requirements.txt
 ├── setup.cfg
 └── supervisor.conf
