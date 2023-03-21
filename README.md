@@ -18,6 +18,8 @@ Described some repository settings for collaboration with other developers.
 <br>
 
 ## To deploy your bot(s) to the server
+CI/CD settings are described in `.github/workflows` folder.
+
 1. Create a new server with installed Docker
 2. Create new GitHub Access token
    - Go to https://github.com/settings/tokens
