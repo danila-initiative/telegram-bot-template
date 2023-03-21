@@ -31,7 +31,8 @@ async def echo_handler(message: types.Message) -> None:
     """
     Handler will forward received message back to the sender
 
-    By default, message handler will handle all message types (like text, photo, sticker and etc.)
+    By default, message handler will handle all message types
+    (like text, photo, sticker and etc.)
     """
     try:
         # Send copy of the received message
@@ -47,7 +48,6 @@ async def main() -> None:
     # ... and all other routers should be attached to Dispatcher
     dp.include_router(router)
 
-    # Initialize Bot instance with a default parse mode which will be passed to all API calls
     bot = Bot(TOKEN, parse_mode='HTML')
     # And the run events dispatching
     await dp.start_polling(bot)
