@@ -15,7 +15,9 @@ Described some repository settings for collaboration with other developers.
     - USER_BOT_TOKEN - token of the bot for users
 6. To run your bot in container use `Run testing bot` command (see below)
 
-**To deploy your bot(s) to the server**
+<br>
+
+## To deploy your bot(s) to the server
 1. Create a new server with installed Docker
 2. Create new GitHub Access token
    - Go to https://github.com/settings/tokens
@@ -30,35 +32,36 @@ Described some repository settings for collaboration with other developers.
    - TOKEN - GitHub token (see step 2)
 4. Add tag to your repository and deployment will start automatically (could check in Actions tab)
 
+<br>
 
 ## Commands
-**Format code**
+### Format code
 ```bash
 make format
 ```
 
-**Check code style and analyze code**
+### Check code style and analyze code
 ```bash
 make check-pep8
 ```
 
-**Run testing bot**
+### Run testing bot
 ```bash
 docker-compose -f docker-compose.dev.yml up --build
 ```
 
-**Enter into the container**
+### Enter into the container
 ```bash
 docker exec -it <container_name> bash
 docker exec -it telegram_bot_template bash
 ```
 
-**Check bot process**
+### Check bot process
 ```bash
 supervisorctl status
 ```
 
-**Restart bot process**
+### Restart bot process
 ```bash
 supervisorctl restart user-bot
 ```
