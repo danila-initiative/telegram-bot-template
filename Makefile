@@ -3,3 +3,7 @@ check-pep8:
 
 format:
 	black code
+
+docker-run:
+	python3 /app/code/scripts/migrate.py
+	/usr/bin/supervisord -n

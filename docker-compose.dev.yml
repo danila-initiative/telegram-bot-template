@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
       context: .
     restart: always
-    command: /usr/bin/supervisord -n
+    command: make docker-run
     container_name: telegram_bot_template
     volumes:
       - ./code:/app/code
