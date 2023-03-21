@@ -30,7 +30,8 @@ Described some repository settings for collaboration with other developers.
    - PRODUCTION_SSH_KEY - private key for SSH connection to your server
    - USER_BOT_TOKEN - token of the user production bot
    - TOKEN - GitHub token (see step 2)
-4. Add tag to your repository and deployment will start automatically (could check in Actions tab)
+4. Change PROJECT_NAME envirinment in `deploy.yml`
+5. Add tag to your repository and deployment will start automatically (could check in Actions tab)
 
 <br>
 
