@@ -1,23 +1,64 @@
 # Telegram bot template
 
-This is a template for creating Telegram bots on Python 3.7+ using
+This is a template for Python project. Particularly, for Telegram bots on
 [aiogram 3 beta](https://github.com/aiogram/aiogram).  
-With Github Actions and Docker. (test)
+With CI/CD using GitHub Actions, Docker and GitHub Packages. All secrets are stored in GitHub Secrets.  
+Described some repository settings for collaboration with other developers.
 
 
 ## How to use
 1. Clone this repository
-2. Create a new bot(s) using [@BotFather](https://t.me/BotFather) (could be 2 bots for users and for administrators)
+2. Create a new bot(s) using [@BotFather](https://t.me/BotFather)
 3. Create test bot(s) (if you want to test your bot before deploying it)
-4. Create 2 files in the root of the project: `.env.production` and `.env.dev`
-5. Fill `.env.production` and `.env.dev` files with your bot(s) token(s) and other settings
+4. Create .env file for local development
+5. Fill `.env` file with your bot(s) token(s) and other settings if necessary
     - USER_BOT_TOKEN - token of the bot for users
-    - ADMIN_BOT_TOKEN - token of the bot for administrators
-    - ADMINISTRATOR_IDS - list of administrator IDs (separated by comma)
+6. To run your bot in container use `Run testing bot` command (see below)
+
+**To deploy your bot(s) to the server**
+1. Create a new server with installed Docker
+2. Create new GitHub Access token
+   - Go to https://github.com/settings/tokens
+   - Press `Generate new token` (classic)
+   - Select scopes: `write:packages`, `read:packages`, `delete:packages`
+   - Copy your token or do not close the page, you will need it later
+3. Create secrets in your repository settings (Settings -> Secrets and Variables -> Actions):
+   - PRODUCTION_SSH_HOST - IP address of your server
+   - PRODUCTION_SSH_USERNAME - username for SSH connection to your server
+   - PRODUCTION_SSH_KEY - private key for SSH connection to your server
+   - USER_BOT_TOKEN - token of the user production bot
+   - TOKEN - GitHub token (see step 2)
+4. Add tag to your repository and deployment will start automatically (could check in Actions tab)
 
 
 ## Commands
+**Format code**
+```bash
+make format
+```
+
+**Check code style and analyze code**
+```bash
+make check-pep8
+```
+
 **Run testing bot**
 ```bash
-docker-compose -f docker-compose.yml --env-file=.env.dev up --build
+docker-compose -f docker-compose.dev.yml up --build
+```
+
+**Enter into the container**
+```bash
+docker exec -it <container_name> bash
+docker exec -it telegram_bot_template bash
+```
+
+**Check bot process**
+```bash
+supervisorctl status
+```
+
+**Restart bot process**
+```bash
+supervisorctl restart user-bot
 ```

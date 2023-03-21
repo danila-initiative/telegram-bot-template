@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  telegram-bot:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    command: /usr/bin/supervisord -n
+    container_name: telegram_bot_template
+    volumes:
+      - ./code:/app/code
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
