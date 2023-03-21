@@ -66,3 +66,46 @@ supervisorctl status
 ```bash
 supervisorctl restart user-bot
 ```
+
+<br>
+
+## Full project tree
+```bash
+├── Dockerfile
+├── Makefile
+├── README.md
+├── code
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-39.pyc
+│   ├── docs
+│   ├── handlers
+│   │   └── __init__.py
+│   ├── internal
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-39.pyc
+│   │   │   └── config.cpython-39.pyc
+│   │   ├── config.py
+│   │   └── db.py
+│   ├── keyboards
+│   │   └── __init__.py
+│   ├── scripts
+│   │   └── migrate.py
+│   ├── storage
+│   │   ├── migrations
+│   │   │   └── 001_CREATE_USER_TABLE.sql
+│   │   └── queries
+│   │       └── add_new_user.sql
+│   └── user_bot.py
+├── data
+│   ├── python_user.stderr.log
+│   ├── python_user.stdout.log
+│   └── sqlite.db
+├── docker-compose.dev.yml
+├── docker-compose.production.yml
+├── pyproject.toml
+├── requirements.txt
+├── setup.cfg
+└── supervisor.conf
+```
