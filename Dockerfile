@@ -10,6 +10,9 @@ RUN apt update && apt upgrade -y
 RUN apt install -y systemctl nano
 RUN apt install -y supervisor
 
+# copy supervisor config
+ADD supervisor.conf /etc/supervisor/conf.d
+
 # install python requirements
 RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt

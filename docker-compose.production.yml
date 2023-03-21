@@ -4,9 +4,11 @@ services:
   telegram-bot:
     image: ghcr.io/danila-initiative/template-bot:${GITHUB_SHA:-latest}
     restart: always
-    command: python3 /app/code/user_bot.py
+    command: /usr/bin/supervisord -n
     container_name: telegram_bot_template
     volumes:
       - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
     env_file:
       - .env
