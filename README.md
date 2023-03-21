@@ -76,8 +76,6 @@ supervisorctl restart user-bot
 ├── README.md
 ├── code
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   └── __init__.cpython-39.pyc
 │   ├── docs
 │   ├── handlers
 │   │   └── __init__.py
