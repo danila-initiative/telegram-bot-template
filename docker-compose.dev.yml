@@ -10,7 +10,9 @@ services:
     container_name: telegram_bot_template
     volumes:
       - ./code:/app/code
+      - ./codegen:/app/codegen
       - ./data:/app/data
+      - ./configs:/app/configs
     environment:
       - PYTHONUNBUFFERED=1
     env_file:

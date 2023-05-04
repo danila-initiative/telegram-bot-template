@@ -1,0 +1,4 @@
+config_type = "config"
+
+[config]
+start = { type = "str", value = """Hello test!!!!""" }

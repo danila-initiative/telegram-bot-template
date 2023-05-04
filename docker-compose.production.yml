@@ -2,10 +2,10 @@ version: "3"
 
 services:
   telegram-bot:
-    image: ghcr.io/danila-initiative/template-bot:${GITHUB_SHA:-latest}
+    image: ghcr.io/danila-initiative/${{vars.PROJECT_NAME}}:${GITHUB_SHA:-latest}
     restart: always
     command: make docker-run
-    container_name: telegram_bot_template
+    container_name: ${{vars.PROJECT_NAME}}
     volumes:
       - ./data:/app/data
     environment:

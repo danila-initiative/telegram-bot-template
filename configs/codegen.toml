@@ -1,0 +1,10 @@
+config_type='skip'
+
+[path]
+configs='configs/'
+generated='code/generated/'
+templates='codegen/templates/'
+
+[other]
+update_interval_sec=600
+

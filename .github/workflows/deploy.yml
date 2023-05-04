@@ -6,7 +6,7 @@ on:
     - 'v*'
 
 env:
-  PROJECT_NAME: template-bot
+  PROJECT_NAME: ${{ vars.PROJECT_NAME }}
 
 
 jobs:
