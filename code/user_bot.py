@@ -4,7 +4,7 @@ import logging
 from aiogram import Bot
 from aiogram import Dispatcher
 from code.handlers import start
-from code.generated.context import ctx
+from code.generated.context import ctx  # type: ignore
 
 
 # Запуск бота

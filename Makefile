@@ -1,5 +1,6 @@
 check-pep8:
-	flake8 code codegen --exclude=code/generated & mypy code codegen --exclude=code/generated
+	flake8 code codegen --exclude=code/generated
+	mypy code codegen --exclude=code/generated
 	flake8 --ignore=E501 code/generated
 
 format:

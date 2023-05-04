@@ -3,7 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 
 from code.internal import commands_st
-from code.generated.context import ctx
+from code.generated.context import ctx  # type: ignore
 
 
 router = Router()

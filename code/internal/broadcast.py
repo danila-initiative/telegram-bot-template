@@ -1,6 +1,6 @@
 from aiogram import Bot
 
-from code.generated.context import ctx
+from code.generated.context import ctx  # type: ignore
 
 
 async def send(text: str, chat_ids: list[int]):
