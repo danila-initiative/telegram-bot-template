@@ -1,5 +1,5 @@
 import jinja2
-from models import path
+from codegen.models import path
 
 
 def codegen(context_data: dict):

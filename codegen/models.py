@@ -27,4 +27,3 @@ class CodegenSettings:
 
 path = Path()
 cg_settings = CodegenSettings()
-

@@ -2,8 +2,8 @@ import os
 import jinja2
 import tomli
 import typing as tp
-from models import path
-from models import cg_settings
+from codegen.models import path
+from codegen.models import cg_settings
 
 
 class ConfigGenerator:
@@ -52,8 +52,7 @@ def get_template(config_type: str) -> tp.Optional[jinja2.Template]:
     with open(f'{path.templates}{config_type}.jinja2', 'r') as f:
         template = f.read()
 
-    template = jinja2.Template(template)
-    return template
+    return jinja2.Template(template)
 
 
 def get_gen_file_path(config_name: str) -> str:

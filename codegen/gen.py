@@ -1,9 +1,9 @@
 import os
 import shutil
 
-import configs
-import context
-from models import path
+from codegen import configs
+from codegen import context
+from codegen.models import path
 
 
 def main():
